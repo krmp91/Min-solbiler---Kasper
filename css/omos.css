@@ -1,0 +1,272 @@
+/* Basic CSS reset */
+*,
+:after,
+:before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg_main: #85b2c7;
+    --text_light: #fff;
+    --text_med: #53627c;
+    --text_dark: #1e2432;
+    --red: #f54c68;
+    --darkred: #c3112d;
+    --orange: #ff8c00;
+  }
+
+
+html {
+    font-size: 100%;
+}
+
+/* You start your css below */
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
+    background-color: rgb(254, 255, 203);
+    color: #333;
+    line-height: 1.7;
+    transition: 0.2s ease-in-out;
+
+}
+
+.hoved_sektion {
+    padding: 10px;
+    max-width: 1024px;
+    margin: 0 auto;
+    
+    
+}
+
+.sidehoved {
+    display: grid; 
+    grid-auto-rows: 1fr; 
+    grid-template-columns: 2fr 0.2fr 0.2fr 0.2fr; 
+    grid-template-rows: 1fr; 
+    gap: 0em 0em; 
+    grid-template-areas: 
+      "solbiler omos login_symbol container"; 
+      align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+.solbiler a {
+    justify-self: start; 
+    grid-area: solbiler; 
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.omos {
+    justify-self: stretch;
+    grid-area: omos;
+    cursor: pointer;
+}
+
+
+.login_symbol {
+    justify-self: stretch;
+    grid-area: login_symbol; 
+    cursor: pointer;
+}
+
+.container {
+    justify-self: end;
+    grid-area: container;
+    cursor: pointer;
+}
+
+.dark {
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+}
+
+.billed_sektion {
+    background-image: url('../billeder/solbanner.png');
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+.hovedindhold {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.omtext {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 3em;
+}
+
+.omtext h1{ 
+  padding: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.omtext p {
+  margin: 0 15em 2em 15em;
+}
+
+
+.aboutarticle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  margin: 0 auto;
+}
+
+.slider {
+  width: 100%;
+  max-width: 550px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;  /* <===  */
+  border-radius: 15px;
+  
+}
+
+.slide {
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutarticle .btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  z-index: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+.aboutarticle .btn:active {
+  transform: scale(1.1);
+}
+
+.btn-prev {
+  top: 45%;
+  left: 2%;
+}
+
+.btn-next {
+  top: 45%;
+  right: 2%;
+}
+
+.tab {
+  overflow: hidden;
+  background-color: rgba(173, 134, 4, 0.815);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.articletabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3;
+  font-size: 17px;
+}
+
+.tab button:hover {
+  background-color: #ffae00;
+
+}
+
+.tab button.active {
+  background-color: #ffc400;
+}
+
+.tabcontent {
+  display: none;
+  background-color: rgba(173, 134, 4, 0.815);
+  box-shadow: 0px 3px 8px  rgba(0, 0, 0, 0.815);
+  padding: 6px 12px;
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+/* Fade effect */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+
+}
+
+/* footer starter her */
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+footer {
+    margin-top: 3rem;
+    padding: 10px;
+    background-color: rgba(173, 134, 4, 0.815);
+}
+
+.kontaktinfo {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto;
+  color: black;
+  text-align: center;
+}
+
+.kontaktinfo a:hover {
+  color: var(--orange);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.footertext {
+  line-height: 1.3rem;
+  flex-basis: 300px;
+    
+}
+
+.footertext img {
+  max-width: 20%;
+  padding: var(--whitespace);
+}
+
+
